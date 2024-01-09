@@ -1,27 +1,31 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+
+using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-//* Configuração do ambiente
-if (builder.Environment.IsDevelopment())
+var connectionString = "SuaStringDeConexao";
+builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    builder.Services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "NomeDoProjeto API", Version = "v1" });
-    });
-}
+    options.UseNpgsql(connectionString);
+});
+
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "User Management API", Version = "v1" });
+});
+
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
-//* Configuração do ambiente
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NomeDoProjeto API v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "User Management API v1"));
 }
 
 app.UseRouting();
@@ -30,4 +34,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 
+app.MapControllers();
 app.Run();
