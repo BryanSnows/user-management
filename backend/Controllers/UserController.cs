@@ -28,7 +28,7 @@ public class UserController : ControllerBase
     public ActionResult<User> AddUser([FromBody] User user)
     {
         _userService.AddUser(user);
-        return CreatedAtAction(nameof(GetUserById), new { id = user.UserId }, user);
+        return CreatedAtAction(nameof(GetUserById), new { id = user.user_id }, user);
     }
 
     [HttpPut("{id}")]
@@ -38,7 +38,7 @@ public class UserController : ControllerBase
         if (existingUser == null)
             return NotFound();
 
-        user.UserId = id;
+        user.user_id = id;
         _userService.UpdateUser(user);
 
         return NoContent();

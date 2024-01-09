@@ -1,32 +1,40 @@
-
-
 public class UserRepository : IUserRepository
 {
-    private List<User> _users = new List<User>();
+    private readonly AppDbContext _context;
 
-    public User GetUserById(int userId) => _users.FirstOrDefault(u => u.UserId == userId);
+    public UserRepository(AppDbContext context)
+    {
+        _context = context;
+    }
 
-    public IEnumerable<User> GetAllUsers() => _users;
+    public User GetUserById(int userId) => _context.Users.FirstOrDefault(u => u.user_id == userId);
+
+    public IEnumerable<User> GetAllUsers() => _context.Users.ToList();
 
     public void AddUser(User user)
     {
-        user.UserId = _users.Count + 1;
-        _users.Add(user);
+        _context.Users.Add(user);
+        _context.SaveChanges();
     }
 
     public void UpdateUser(User user)
     {
-        var existingUser = _users.FirstOrDefault(u => u.UserId == user.UserId);
+        var existingUser = _context.Users.Find(user.user_id);
         if (existingUser != null)
         {
-            existingUser.UserName = user.UserName;
-            existingUser.UserSurname = user.UserSurname;
-            existingUser.UserEmail = user.UserEmail;
+            existingUser.user_name = user.user_name;
+            existingUser.user_surname = user.user_surname;
+            existingUser.user_email = user.user_email;
+            _context.SaveChanges();
         }
     }
 
     public void DeleteUser(int userId)
     {
-        _users.RemoveAll(u => u.UserId == userId);
-    }
-}
+        var userToDelete = _context.Users.Find(userId);
+        if (userToDelete != null)
+        {
+            _context.Users.Remove(userToDelete);
+            _context.SaveChanges();
+        }
+    }}
