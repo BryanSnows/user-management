@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class User
 {
     public int UserId { get; set; }
@@ -8,5 +10,6 @@ public class User
     public string UserRefreshToken { get; set; }
     public int ProfileId { get; set; }
 
+    [ForeignKey("ProfileId")]
     public Profile Profile { get; set; }
 }
