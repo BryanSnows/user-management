@@ -1,6 +1,12 @@
-public class Usuario
+public class User
 {
-    public int Id { get; set; }
-    public string Nome { get; set; }
-    public string Email { get; set; }
+    public int UserId { get; set; }
+    public string UserName { get; set; }
+    public string UserSurname { get; set; }
+    public string UserEmail { get; set; }
+    public string UserPassword { get; set; }
+    public string UserRefreshToken { get; set; }
+    public int ProfileId { get; set; }
+
+    public Profile Profile { get; set; }
 }

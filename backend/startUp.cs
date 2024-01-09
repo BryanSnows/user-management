@@ -1,2 +1,7 @@
-services.AddDbContext<ApplicationContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ApplicationContext>(options =>
+        options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+    // ...
+}
