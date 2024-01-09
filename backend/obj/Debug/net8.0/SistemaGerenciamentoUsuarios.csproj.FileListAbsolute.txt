@@ -1,0 +1,8 @@
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.csproj.AssemblyReference.cache
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.AssemblyInfoInputs.cache
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.AssemblyInfo.cs
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.csproj.CoreCompileInputs.cache
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bryan.pinto\Documents\users\backend\obj\Debug\net8.0\SistemaGerenciamentoUsuarios.sourcelink.json

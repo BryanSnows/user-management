@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bryan.pinto\\Documents\\users\\users.csproj": {}
+    "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\SistemaGerenciamentoUsuarios.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bryan.pinto\\Documents\\users\\users.csproj": {
+    "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\SistemaGerenciamentoUsuarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bryan.pinto\\Documents\\users\\users.csproj",
-        "projectName": "users",
-        "projectPath": "C:\\Users\\bryan.pinto\\Documents\\users\\users.csproj",
+        "projectUniqueName": "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\SistemaGerenciamentoUsuarios.csproj",
+        "projectName": "SistemaGerenciamentoUsuarios",
+        "projectPath": "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\SistemaGerenciamentoUsuarios.csproj",
         "packagesPath": "C:\\Users\\bryan.pinto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bryan.pinto\\Documents\\users\\obj\\",
+        "outputPath": "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bryan.pinto\\AppData\\Roaming\\NuGet\\NuGet.Config",

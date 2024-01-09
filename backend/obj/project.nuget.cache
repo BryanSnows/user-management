@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "19l4lfkW4pQ6jsdiDhj90QRlv5KotEQqQO/y/CZCCxvTtEAVCkOhyPfl72HLasnu7OF4acW8WPGbZJ92y+tGSg==",
+  "dgSpecHash": "udLIYYNT/0+F9aSUInFtSSCXshllDANqk8rAmpQxN60w3NpxlMvjrk0P9+A5ve7GdrdfLQhnUZFam+XTGI8cCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bryan.pinto\\Documents\\users\\users.csproj",
+  "projectFilePath": "C:\\Users\\bryan.pinto\\Documents\\users\\backend\\SistemaGerenciamentoUsuarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bryan.pinto\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "C:\\Users\\bryan.pinto\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
