@@ -27,31 +27,34 @@ public class UserController : ControllerBase
     [HttpPost]
 public ActionResult<User> AddUser([FromBody] CreateUserDto createUserDto)
 {
-    // Mapeie os dados do DTO para a entidade User
+
     var user = new User
     {
-        user_name = createUserDto.User_Name,
-        user_surname = createUserDto.User_Surname,
-        user_email = createUserDto.User_Email,
-        user_password = createUserDto.User_Password,
-        profile_id = createUserDto.Profile_Id
+        user_name = createUserDto.user_name,
+        user_surname = createUserDto.user_surname,
+        user_email = createUserDto.user_email,
+        user_password = createUserDto.user_password,
+        profile_id = createUserDto.profile_id
     };
 
     _userService.AddUser(user);
 
-    // Retorne a resposta com o ID do usuário criado
+   
     return CreatedAtAction(nameof(GetUserById), new { id = user.user_id }, user);
 }
-
     [HttpPut("{id}")]
-    public IActionResult UpdateUser(int id, [FromBody] User user)
+    public IActionResult UpdateUser(int id, [FromBody] UpdateUserDto updateUserDto)
     {
         var existingUser = _userService.GetUserById(id);
         if (existingUser == null)
             return NotFound();
 
-        user.user_id = id;
-        _userService.UpdateUser(user);
+        existingUser.user_name = updateUserDto.user_name;
+        existingUser.user_surname = updateUserDto.user_surname;
+        existingUser.user_email = updateUserDto.user_email;
+        existingUser.profile_id = updateUserDto.profile_id;
+
+        _userService.UpdateUser(existingUser);
 
         return NoContent();
     }
