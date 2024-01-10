@@ -25,11 +25,23 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<User> AddUser([FromBody] User user)
+public ActionResult<User> AddUser([FromBody] CreateUserDto createUserDto)
+{
+    // Mapeie os dados do DTO para a entidade User
+    var user = new User
     {
-        _userService.AddUser(user);
-        return CreatedAtAction(nameof(GetUserById), new { id = user.user_id }, user);
-    }
+        user_name = createUserDto.User_Name,
+        user_surname = createUserDto.User_Surname,
+        user_email = createUserDto.User_Email,
+        user_password = createUserDto.User_Password,
+        profile_id = createUserDto.Profile_Id
+    };
+
+    _userService.AddUser(user);
+
+    // Retorne a resposta com o ID do usuário criado
+    return CreatedAtAction(nameof(GetUserById), new { id = user.user_id }, user);
+}
 
     [HttpPut("{id}")]
     public IActionResult UpdateUser(int id, [FromBody] User user)
