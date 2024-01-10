@@ -1,8 +1,8 @@
 public class Transaction
 {
-    public int TransactionId { get; set; }
-    public string TransactionName { get; set; }
-    public int TransactionNumber { get; set; }
-    public bool TransactionStatus { get; set; }
+    public int transaction_id { get; set; }
+    public string transaction_name { get; set; }
+    public int transaction_number { get; set; }
+    public bool transaction_status { get; set; }
     public ICollection<ProfileTransaction> ProfileTransactions { get; set; }
 }

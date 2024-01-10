@@ -27,9 +27,12 @@ public class AppDbContext : DbContext
     {
         modelBuilder.Entity<User>().ToTable("user")
         .HasKey(u => u.user_id); 
-        modelBuilder.Entity<Profile>().ToTable("profile");
-        modelBuilder.Entity<Transaction>().ToTable("transaction");
-        modelBuilder.Entity<ProfileTransaction>().ToTable("profile_transaction");
+        modelBuilder.Entity<Profile>().ToTable("profile")
+        .HasKey(u => u.profile_id); 
+        modelBuilder.Entity<Transaction>().ToTable("transaction")
+         .HasKey(u => u.transaction_id); 
+        modelBuilder.Entity<ProfileTransaction>().ToTable("profile_transaction")
+         .HasKey(u => u.profile_transaction_id); 
 
         modelBuilder.Entity<User>()
             .HasOne(u => u.Profile)
@@ -39,11 +42,11 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<ProfileTransaction>()
             .HasOne(pt => pt.Profile)
             .WithMany(p => p.ProfileTransactions)
-            .HasForeignKey(pt => pt.ProfileId);
+            .HasForeignKey(pt => pt.profile_id);
 
         modelBuilder.Entity<ProfileTransaction>()
             .HasOne(pt => pt.Transaction)
             .WithMany(t => t.ProfileTransactions)
-            .HasForeignKey(pt => pt.TransactionId);
+            .HasForeignKey(pt => pt.transaction_id);
     }
 }

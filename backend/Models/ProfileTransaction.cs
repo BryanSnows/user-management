@@ -1,8 +1,8 @@
 public class ProfileTransaction
 {
-    public int ProfileTransactionId { get; set; }
-    public int ProfileId { get; set; }
-    public int TransactionId { get; set; }
+    public int profile_transaction_id { get; set; }
+    public int profile_id { get; set; }
+    public int transaction_id { get; set; }
     public Profile Profile { get; set; }
     public Transaction Transaction { get; set; }
 }
